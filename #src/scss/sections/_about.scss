@@ -1,0 +1,30 @@
+
+
+.about {
+  background-color: $background;
+	padding: 0px 0px 30px 0px;
+	@media (max-width:$md3+px){
+		padding: 0px 0px 10px 0px;
+	}
+  &__content-block {
+    margin: 0px 0px 30px 0px;
+		@media (max-width:$md3+px){
+			margin: 0px 0px 30px 0px;
+		}
+  }
+}
+.container {
+}
+.content-block {
+	text-align: center;
+
+		@media (max-width:$md2+px){
+			font-size: 18px;
+			margin: 0px 0px 25px 0px;
+		}
+		@media (max-width:$md3+px){
+      font-size: 16px;
+			margin: 0px 0px 15px 0px;
+    }
+
+  }

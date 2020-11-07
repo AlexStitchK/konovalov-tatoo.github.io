@@ -1,0 +1,21 @@
+.footer {
+  padding: 10px 0px;
+  display: flex;
+  background-color: $background;
+  align-items: center;
+  justify-content: center;
+  &__text {
+    font-size: 14px;
+		font-weight: 300;
+		line-height: 26px;
+    color: $main;
+    font-family: 'Balsamiq Sans', serif;
+  }
+
+  &__link {
+    font-size: 1.1rem;
+    font-family: 'Balsamiq Sans', cursive;
+		font-size: 14px;
+		font-weight: 700;
+  }
+}

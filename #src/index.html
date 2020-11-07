@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="css/style.min.css">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.2/css/all.css" integrity="sha384-KA6wR/X5RY4zFAHpv/CnoG2UW1uogYfdnP67Uv7eULvTveboZJg0qUpmJZb5VqzN" crossorigin="anonymous"/>
+  <link href="https://fonts.googleapis.com/css2?family=Balsamiq+Sans:ital,wght@1,700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+  <title>Document</title>
+</head>
+<body>
+  <div class="wrapper">
+		<div class="mainblock">
+			<div class="mainblock__content">
+				<div class='container'>
+					<a href="" class="mainblock__logo">
+						<img src="img/logo.png" alt="" />
+					</a>
+					<div class="mainblock__text">
+						<div class="mainblock__title">Мои приоритеты - клиент, цена, качество!</div>
+					</div>
+					<div class="mainblock__footer">
+						<a href="#content" class="mainblock__btn btn goto"><span>прочитайте больше</span></a>
+						<a href="#content" class="mainblock__arrow goto"><img src="img/arrow-down.png" alt="" /></a>
+					</div>
+				</div>
+			</div>
+			<div class="mainblock__image ibg">
+				<img src="img/par.png" alt="" />
+			</div>
+    </div>
+    <div class="content">
+      <div class="menu menu_mb">
+				<div class='container'>
+					<nav class="menu__items">
+						<ul class="menu__list">
+							<li><a href="#about" class="menu__link menu__link-act">Обо мне</a></li>
+							<li><a href="#prod" class="menu__link">Продукция</a></li>
+							<li><a href="#inst" class="menu__link">Инстаграм</a></li>
+							<li><a href="#contact" class="menu__link">контакты</a></li>
+						</ul>
+					</nav>
+				</div>
+      </div>
+      @@include('template/_about.html')
+      @@include('template/_portfolio.html')
+      @@include('template/_instagram.html')
+      @@include('template/_contact.html')
+      @@include('template/_footer.html')
+    </div>
+
+  </div>
+
+
+	<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+<!-- <script src="https://code.jquery.com/jquery-migrate-3.0.1.min.js"></script> -->
+
+  <script src="js/script.min.js"></script>
+</body>
+</html>

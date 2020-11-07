@@ -1,0 +1,348 @@
+
+//<МИКСИНЫ>===============================================================================================
+@mixin anim($time,$delay){-webkit-transition: all $time ease $delay;-moz-transition: all $time ease $delay;-ms-transition: all $time ease $delay;-o-transition: all $time ease $delay;transition: all $time ease $delay;}
+@mixin anim_cubic($time, $delay) {-webkit-transition:all $time cubic-bezier(0.68,-0.55,0.265,1.55) $delay;-moz-transition:all $time cubic-bezier(0.68,-0.55,0.265,1.55) $delay;-ms-transition:all $time cubic-bezier(0.68,-0.55,0.265,1.55) $delay;-o-transition:all $time cubic-bezier(0.68,-0.55,0.265,1.55) $delay;transition:all $time cubic-bezier(0.68,-0.55,0.265,1.55) $delay;}
+@mixin rotate($deg){-moz-transform: rotate($deg);-ms-transform: rotate($deg);-webkit-transform: rotate($deg);-o-transform: rotate($deg);transform: rotate($deg);}
+@mixin scale($num){-moz-transform: scale($num);-ms-transform: scale($num);-webkit-transform: scale($num);-o-transform: scale($num);transform: scale($num);}
+@mixin skew($num){-webkit-transform: skewX($num);-moz-transform: skewX($num);-ms-transform: skewX($num);-o-transform: skewX($num);transform: skewX($num);}
+@mixin cnt($h){display: flex;flex-direction: column;height: $h;text-align: center;align-items: stretch;justify-content: center;}
+@mixin tr($x,$y,$z){transform: translate3d($x, $y, $z);};
+@mixin flexbox() {display:-webkit-box;display:-moz-box;display:-ms-flexbox;display:-webkit-flex;display:flex;font-size:0;}
+@mixin flexboxinline(){display:-webkit-inline-flex;display:-moz-inline-flex;display:-ms-inline-flex;display:-o-inline-flex;display:inline-flex;}
+@mixin flexorder($val){-webkit-box-ordinal-group: $val;-moz-box-ordinal-group: $val;-ms-flex-order: $val;-webkit-order: $val;order: $val;}
+//</МИКСИНЫ>===============================================================================================
+
+//<ШРИФТЫ>===============================================================================================
+
+
+//Переменные===============================================================================================
+// $main: #f2efe5;
+$main: #192024;
+$main-light: rgba(25, 32, 36, 0.5);
+$nav-scroll: #273238;
+$background:  rgb(238, 238, 238);
+$button: #9a977a;
+$nav: #fffbf8;
+$text: #000;
+
+@import url('https://fonts.googleapis.com/css?family=Lato:300,400,700,900&display=swap');
+
+//<Подключаем шрифты>=======================================================================================
+
+//</Подключаем шрифты>=======================================================================================
+
+
+//<Шрифт по умолчанию>==========================================================================================
+$fontfamily:"Lato";
+//</Шрифт по умолчанию>==========================================================================================
+
+//</ШРИФТЫ>==============================================================================================================
+
+//<ПЕРЕМЕННЫЕ>===========================================================================================================
+$minwidth:320px;
+$mw:1100;
+$md1:$mw+12;
+$md2:992.98;
+$md3:767.98;
+$md4:479.98;
+//</ПЕРЕМЕННЫЕ>==============================================================================================================
+
+//<ОБНУЛЕНИЕ, ОБЩИЕ ПАРАМЕТРЫ>===============================================================================================
+*{padding: 0px;margin: 0px;border: 0px;}
+*,*:before,*:after{-moz-box-sizing: border-box;-webkit-box-sizing: border-box;box-sizing: border-box;}
+:focus,:active{outline: none;}
+a:focus,a:active{outline: none;}
+aside,nav,footer,header,section{display: block;}
+html,body{height: 100%;margin: 0;padding: 0;min-width: $minwidth;position: relative;width: 100%;color: #000;}
+body{font-size: 100%;line-height: 1;font-size: 14px;font-family: $fontfamily;-ms-text-size-adjust: 100%;-moz-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;
+	&.lock{overflow: hidden;
+		@media (max-width:$md3+px){
+			width: 100%;
+			position: fixed;
+			overflow: hidden;
+		}
+	}
+}
+input,button,textarea{font-family: $fontfamily;}
+input::-ms-clear{display: none;}
+button{cursor: pointer;}
+button::-moz-focus-inner {padding:0;border:0;}
+a, a:visited{text-decoration: none;}
+a:hover{text-decoration: none;}
+ul li{list-style: none;}
+img{vertical-align: top;}
+h1,h2,h3,h4,h5,h6{font-weight: inherit;font-size: inherit;}
+//</ОБНУЛЕНИЕ, ОБЩИЕ ПАРАМЕТРЫ>===============================================================================================
+
+//<ОБОЛОЧКА>===========================================================================================================
+.wrapper{width: 100%;min-height: 100%;overflow: hidden;
+	@include flexbox();
+	flex-direction: column;
+	&.loaded{}
+}
+//</ОБОЛОЧКА>===========================================================================================================
+
+//<ОСНОВНАЯ СЕТКА>===========================================================================================================
+.container{max-width:$mw+px;margin: 0 auto;width: 100%;
+	@media (max-width:$md1+px){max-width: 970px;}
+	@media (max-width:$md2+px){max-width: 750px;}
+	@media (max-width:$md3+px){max-width: none;padding:0 10px;}
+}
+//</ОСНОВНАЯ СЕТКА>===========================================================================================================
+
+.ibg{background-position: center;background-size: cover;background-repeat: no-repeat;
+	img{display: none;}
+}
+
+.header-block {
+	text-align: center;
+	// .header-block__title
+	&__title {
+		font-size: 24px;
+		font-weight: 700;
+		letter-spacing: 1.95px;
+		text-transform: uppercase;
+		position: relative;
+    padding: 0px 0px 10px 0px;
+    font-family: 'Roboto Mono', monospace;
+	}
+	// .header-block__subtitle
+	&__text {
+    text-align: center;
+		padding: 10px 0px 0px 0px;
+		color: #868585;
+		font-size: 16px;
+		font-weight: 300;
+		line-height: 25.89px;
+		max-width: 700px;
+    margin: 0px auto;
+    font-family: 'Roboto Mono', monospace;
+	}
+}
+.btn {
+  display: inline-block;
+  padding: 0px 30px;
+  line-height: 56px;
+  height: 56px;
+  overflow: hidden;
+  background-color: inherit;
+  border: 1px solid #ffffff;
+  border-radius: 5px;
+  font-weight: 700;
+  color: #ffffff;
+  font-size: 16px;
+  letter-spacing: 1px;
+  position: relative;
+  text-transform: uppercase;
+  &:after {
+    content: '';
+    width: 0;
+    transition: all 0.65s ease 0s;
+    position: absolute;
+    height: 100%;
+    left: 50%;
+    top:0;
+    background-color: $main;
+    border-color: $main;
+  }
+  span {
+    position: relative;
+    z-index: 2;
+  }
+  &:hover {
+    &::after{
+      left: 0;
+      background-color: $main;
+      border-color: $main;
+      width: 100%;
+    }
+  };
+  @media (max-width:$md3+px) {
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    line-height: 16px;
+  }
+}
+.mainblock {
+	flex: 1 1 auto;
+	position: relative;
+	@include flexbox();
+	justify-content:center;
+	//align-items: center;
+	text-align: center;
+	padding: 50px 0;
+	@media screen and (max-width: $md3+px) , screen and (max-height: 600px) {
+		padding: 20px 0;
+	}
+	// .mainblock__content
+	&__content {
+		position: relative;
+		z-index: 1;
+		flex: 1 1 auto;
+		.container{
+			height: 100%;
+			@include flexbox();
+			flex-direction: column;
+			justify-content: space-between;
+			align-items: center;
+		}
+	}
+	// .mainblock__logo
+	&__logo {
+    img{max-width: 100px;}
+    @media screen and (max-width: $md3+px) , screen and (max-height: 600px) {
+      img{max-width: 70px;}
+		}
+  }
+	// .mainblock__text
+	&__text {
+		color: #ffffff;
+		position: relative;
+		padding: 0px 0px 45px 0px;
+    margin: 30px 0;
+    font-family: 'Roboto Mono', monospace;
+	}
+	// .mainblock__title
+	&__title {
+		font-weight: 900;
+		font-size: 36px;
+		line-height: 46px;
+    font-family: 'Roboto Mono', monospace;
+
+    font-family: 'Balsamiq Sans', cursive;
+		letter-spacing: 1px;
+		margin: 0px 0px 10px 0px;
+		@media screen and (max-width: $md3+px) , screen and (max-height: 600px) {
+			font-size: 16px;
+			line-height: 24px;
+		}
+	}
+	// .mainblock__footer
+	&__footer {
+		@include flexboxinline();
+		flex-direction: column;
+	}
+	// .mainblock__btn
+	&__btn {
+		margin: 0px 0px 60px 0px;
+		@media screen and (max-width: $md3+px) , screen and (max-height: 600px) {
+			margin: 0px 0px 30px 0px;
+		}
+	}
+	// .mainblock__arrow
+	&__arrow {
+		position: relative;
+		animation: arrow 2s infinite ease;
+	}
+	// .mainblock__image
+	&__image {
+		position: fixed;
+		width: 100%;
+		height: 100%;
+		top: 0;
+		left: 0;
+	}
+}
+
+@keyframes arrow{
+	0%{top: 0;}
+	50%{top: 10px;}
+	100%{top: 0;}
+}
+@-webkit-keyframes arrow{
+	0%{top: 0;}
+	50%{top: 10px;}
+	100%{top: 0;}
+}
+@-moz-keyframes arrow{
+	0%{top: 0;}
+	50%{top:10px;}
+	100%{top: 0;}
+}
+@-o-keyframes arrow{
+	0%{top: 0;}
+	50%{top: 10px;}
+	100%{top: 0;}
+}
+
+//===================================================================================================================
+.content{
+	background-color:$background;
+	position: relative;
+	z-index: 50;
+}
+//
+//===================================================================================================================
+.menu {
+	padding: 22px 0;
+  border-bottom: 1px solid $main-light;
+
+	&_mb{
+		margin: 0px 0px 100px 0px;
+		@media (max-width:$md2+px){
+			margin: 0px 0px 50px 0px;
+		}
+		@media (max-width:$md3+px){
+			margin: 0px 0px 30px 0px;
+		}
+	}
+	@media (max-width:$md4+px){
+		padding: 22px 0 12px 0;
+	}
+	// .menu__items
+	&__items {}
+	// .menu__list
+	&__list {
+		@include flexbox();
+		justify-content:center;
+		align-items: center;
+		li{margin: 0px 25px;
+			@media (max-width:$md3+px){
+				margin: 0px 15px 10px 15px;
+			}
+			@media (max-width:$md3+px){
+				flex: 0 1 25%;
+			}
+		}
+		@media (max-width:$md4+px){
+			flex-wrap: wrap;
+		}
+	}
+	// .menu__link
+  &__link {
+    color: #646667;
+    font-size: 12px;
+    font-weight: 700;
+    line-height: 28px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    position: relative;
+    transition: all 0.3s ease 0s;
+    display: block;
+    &:after{
+      content: '';
+      position: absolute;
+      left: -3%;
+      width: 0;
+      height: 1px;
+      background-color: $main;
+      bottom: 0;
+      transition: all 0.3s ease 0s;
+    }
+    &:hover{
+      color: $main;
+      &:after{
+        left: 0;
+        width: 100%;
+      }
+    }
+  }
+}
+//===================================================================================================================
+@import "sections/_about";
+@import "sections/_portfolio";
+@import "sections/_contact";
+@import "sections/_instagram";
+@import "sections/_footer";

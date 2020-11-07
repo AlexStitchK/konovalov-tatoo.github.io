@@ -1,0 +1,56 @@
+.parallax {
+  background: transparent;
+  position: relative;
+  overflow-x:hidden;  /*для горизонтального*/
+}
+.header-cont {
+  min-height: 100vh;
+  position: relative;
+}
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+  padding: 10px 30px;
+}
+
+
+.logo {
+	display: flex;
+  width: 70px;
+}
+
+.logo-img {
+max-width: 100%;
+}
+
+.slogan {
+  z-index: -1;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-right: -50%;
+  transform: translate(-50%, -50%)
+}
+
+.text-slogan{
+  font-family: 'Balsamiq Sans', cursive;
+  font-weight: 600;
+  font-style: italic;
+  font-size: 2.7rem;
+  text-decoration: none;
+  text-align: center;
+	margin-right: 20px;
+  color: $nav;
+  letter-spacing: 0.05em;
+}
+  .sticky {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 50;
+    background-color: $main;
+    transition: .8s;
+  }
